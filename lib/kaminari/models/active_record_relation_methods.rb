@@ -6,6 +6,7 @@ module Kaminari
 
     def reset #:nodoc:
       @total_count = nil
+
       super
     end
 
@@ -23,6 +24,7 @@ module Kaminari
 
         # .group returns an OrderdHash that responds to #count
         c = c.count(*args)
+
         if c.is_a?(Hash) || c.is_a?(ActiveSupport::OrderedHash)
           c.count
         else
